@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-
+import subprocess
 # Step 1: Get input file path from command line
 file_path = sys.argv[1]
 
@@ -92,6 +92,11 @@ df.to_csv("data_preprocessed.csv", index=False)
 print("Saved data_preprocessed.csv successfully.")
 
 # Step 4: call analytics.py
-# import subprocess
-# subprocess.run(["python", "analytics.py", "data_preprocessed.csv"])
-
+try:
+    subprocess.run(
+        ["python", "analytics.py", "data_preprocessed.csv"],
+        check=True
+    )
+    print("analytics.py ran successfully!")
+except subprocess.CalledProcessError:
+    print("Error: analytics.py failed to run.")
