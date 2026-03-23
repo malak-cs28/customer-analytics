@@ -22,4 +22,4 @@ df.to_csv("data_raw.csv", index=False)
 print("Saved data_raw.csv successfully.")
 
 # Step 4: call to preprocess.py 
-# subprocess.run(["python", "preprocess.py", "data_raw.csv"])
+subprocess.run(["python", "preprocess.py", "data_raw.csv"])
