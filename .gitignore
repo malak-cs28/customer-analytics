@@ -1,0 +1,12 @@
+# Ignore all CSVs (your raw/preprocessed data)
+*.csv
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore results folder (will be generated inside Docker)
+results/
+
+# Ignore VS Code settings
+.vscode/
