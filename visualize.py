@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
+import subprocess
 
 # Get preprocessed CSV path from command line
 file_path = sys.argv[1]
@@ -38,3 +39,12 @@ plt.tight_layout()
 plt.savefig('summary_plot.png')
 
 print("Visualization complete! Saved summary_plot.png.")
+
+
+# Call cluster.py
+try:
+	subprocess.run(["python", "cluster.py", file_path], check=True)
+	print("cluster.py ran successfully!")
+except subprocess.CalledProcessError:
+	print("Error: cluster.py failed to run.")
+	sys.exit(1)
