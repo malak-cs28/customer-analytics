@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import subprocess
 
 # Get preprocessed CSV path from command line
 file_path = sys.argv[1]
@@ -23,4 +24,16 @@ insight2 = f"The most active Base is {top_base} with {top_base_count} trips."
 with open('insight2.txt', 'w') as f:
     f.write(insight2)
 
-print("Analytics complete! Saved insight1.txt and insight2.txt.")
+# Insight 3: Most active weekday
+weekday_counts = df['weekday'].value_counts()
+top_weekday = weekday_counts.idxmax()
+top_weekday_count = weekday_counts.max()
+insight3 = f"The busiest weekday is {top_weekday} with {top_weekday_count} trips."
+
+with open('insight3.txt', 'w') as f:
+    f.write(insight3)
+
+print("Analytics complete! Saved insight1.txt, insight2.txt, and insight3.txt.")
+
+# Call visualize.py
+subprocess.run(["python", "visualize.py", file_path])
