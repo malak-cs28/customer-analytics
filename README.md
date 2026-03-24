@@ -118,3 +118,21 @@ From the project root:
 ```bash
 docker build -t customer-analytics .
 docker run -it --name customer_analytics_container customer-analytics
+```
+---
+## Docker Hub Image (Bonus)
+
+The Docker image for this project is available on Docker Hub:
+
+- **Docker Hub Username:** `malakabdelhamid`  
+- **Image:** `malakabdelhamid/customer-analytics:latest`  
+
+To pull and run the image directly:
+
+```bash
+# Pull the image from Docker Hub
+docker pull malakabdelhamid/customer-analytics:latest
+
+# Run the container interactively
+docker run -it --name customer_analytics_container malakabdelhamid/customer-analytics:latest
+
