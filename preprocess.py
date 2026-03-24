@@ -92,14 +92,10 @@ print(f"After preprocessing and feature selection: {df.shape}")
 df.to_csv("data_preprocessed.csv", index=False)
 print("Saved data_preprocessed.csv successfully.")
 
-# Step 4: call analytics.py
-try:
-    subprocess.run(
+
+
+# Step 4: call analytics.py automatically
+subprocess.run(
         ["python", "analytics.py", "data_preprocessed.csv"],
         check=True
     )
-    print("analytics.py ran successfully!")
-except subprocess.CalledProcessError:
-    print("Error: analytics.py failed to run.")
-
-
