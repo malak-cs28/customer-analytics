@@ -95,11 +95,7 @@ print("Saved data_preprocessed.csv successfully.")
 
 
 # Step 4: call analytics.py automatically
-try:
-    subprocess.run(
+subprocess.run(
         ["python", "analytics.py", "data_preprocessed.csv"],
         check=True
     )
-    print("analytics.py ran successfully!")
-except subprocess.CalledProcessError:
-    print("Error: analytics.py failed to run.")
